@@ -9,8 +9,9 @@ import {
   StatusBar,
   ImageBackground,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function ChangePassScreen({navigation, route}) {
   const handleSend = () => {
@@ -18,14 +19,14 @@ export default function ChangePassScreen({navigation, route}) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.text}>
         Masukkan password lama Anda untuk memverifikasi sebelum Anda merubah
         password baru
       </Text>
       <View style={styles.menuContainer}>
         <View style={styles.menuIcon}>
-          <Ionicons name="md-lock-closed-outline" size={26} color="#373737" />
+          <Icon name="lock-outline" size={26} color="#373737" />
         </View>
         <View style={styles.menuBar}>
           <TextInput placeholder="Old Password" style={{height: 50}} />
@@ -37,7 +38,7 @@ export default function ChangePassScreen({navigation, route}) {
         </View>
       </TouchableOpacity>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -9,8 +9,9 @@ import {
   StatusBar,
   ImageBackground,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function ConfirmChangePassScreen({navigation, route}) {
   const handleFinish = () => {
@@ -18,13 +19,13 @@ export default function ConfirmChangePassScreen({navigation, route}) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.text}>
         Masukkan password baru yang mau Anda gantikan
       </Text>
       <View style={styles.menuContainer}>
         <View style={styles.menuIcon}>
-          <Ionicons name="md-lock-closed-outline" size={26} color="#373737" />
+          <Icon name="lock-outline" size={26} color="#373737" />
         </View>
         <View style={styles.menuBar}>
           <TextInput placeholder="New Password" style={{height: 50}} />
@@ -32,7 +33,7 @@ export default function ConfirmChangePassScreen({navigation, route}) {
       </View>
       <View style={styles.menuContainer}>
         <View style={styles.menuIcon}>
-          <Ionicons name="md-lock-closed-outline" size={26} color="#373737" />
+          <Icon name="lock-outline" size={26} color="#373737" />
         </View>
         <View style={styles.menuBar}>
           <TextInput placeholder="Confirm New Password" style={{height: 50}} />
@@ -44,7 +45,7 @@ export default function ConfirmChangePassScreen({navigation, route}) {
         </View>
       </TouchableOpacity>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 

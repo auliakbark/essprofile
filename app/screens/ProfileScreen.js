@@ -7,13 +7,18 @@ import {
   Image,
   StatusBar,
   ImageBackground,
+  SafeAreaView,
 } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function ProfileScreen({navigation, route}) {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={{flexDirection: 'row'}}>
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        style={{flexDirection: 'row'}}
+        onPress={() => {
+          navigation.navigate('UserProfileScreen');
+        }}>
         <View style={{width: '50%'}}>
           <ImageBackground
             style={styles.leftContainer}
@@ -50,9 +55,13 @@ export default function ProfileScreen({navigation, route}) {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.menuContainer}>
+      <TouchableOpacity
+        style={styles.menuContainer}
+        onPress={() => {
+          navigation.navigate('UserProfileScreen');
+        }}>
         <View style={styles.menuIcon}>
-          <Ionicons name="md-person-circle-outline" size={32} color="#FFD60A" />
+          <Icon name="account-circle-outline" size={28} color="#FFD60A" />
         </View>
         <View style={styles.menuBar}>
           <Text style={styles.menuText}>User Profile</Text>
@@ -64,7 +73,7 @@ export default function ProfileScreen({navigation, route}) {
           navigation.navigate('ChangePassScreen');
         }}>
         <View style={styles.menuIcon}>
-          <Ionicons name="md-key-outline" size={32} color="#FFD60A" />
+          <Icon name="key-outline" size={28} color="#FFD60A" />
         </View>
         <View style={styles.menuBar}>
           <Text style={styles.menuText}>Change Password</Text>
@@ -72,14 +81,14 @@ export default function ProfileScreen({navigation, route}) {
       </TouchableOpacity>
       <TouchableOpacity style={styles.menuContainer}>
         <View style={styles.menuIcon}>
-          <Ionicons name="md-exit-outline" size={32} color="#FFD60A" />
+          <Icon name="logout" size={28} color="#FFD60A" />
         </View>
         <View style={styles.menuBar}>
           <Text style={styles.menuText}>Logout</Text>
         </View>
       </TouchableOpacity>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 

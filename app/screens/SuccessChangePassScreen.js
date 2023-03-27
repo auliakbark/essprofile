@@ -9,15 +9,16 @@ import {
   ImageBackground,
   Button,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+
 export default function SuccessChangePassScreen({navigation}) {
   const handleGetStarted = () => {
     navigation.replace('ProfileScreen');
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={'#FFD60A'} />
       <View style={styles.content}>
         <Image source={require('../assets/forget.png')} />
@@ -31,7 +32,7 @@ export default function SuccessChangePassScreen({navigation}) {
           <Text style={styles.buttonText}>GET STARTED</Text>
         </View>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 
