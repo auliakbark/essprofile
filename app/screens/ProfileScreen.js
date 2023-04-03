@@ -17,7 +17,7 @@ export default function ProfileScreen({navigation, route}) {
       <TouchableOpacity
         style={{flexDirection: 'row'}}
         onPress={() => {
-          navigation.navigate('UserProfileScreen');
+          navigation.navigate('CVScreen');
         }}>
         <View style={{width: '50%'}}>
           <ImageBackground
